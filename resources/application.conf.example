@@ -1,0 +1,29 @@
+ktor {
+    deployment {
+        port = 8080
+        port = ${?PORT}
+        secret_key = 898748674728934843
+    }
+    application {
+        modules = [ xyz.olympusblog.ApplicationKt.module ]
+    }
+    db {
+        jdbcUrl = "jdbc:postgresql://localhost:5432/ktor"
+        dbUser = postgres
+        dbPassword = "password"
+        dbDriver = org.postgresql.Driver
+    }
+    redis {
+        url = "redis://localhost:6379"
+    }
+    aws {
+        accessKey = "accessKey",
+        secretAccessKey = "secretAccessKey",
+        storageBucketName = "storageBucketName",
+        region = "region"
+    }
+    gmail {
+        user = "user@gmail.com",
+        password = "password"
+    }
+}
